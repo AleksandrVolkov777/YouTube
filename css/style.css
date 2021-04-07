@@ -3,7 +3,9 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .header {
@@ -13,6 +15,7 @@ body {
 	padding-bottom: 20px;
 	padding-left: 32px;
 	padding-right: 70px;
+	margin-bottom: 30px;
 }
 
 .menu-button {
@@ -37,7 +40,7 @@ body {
 }
 
 .logo {
-    margin-right: 59px;
+	margin-right: 59px;
 }
 
 .input-group {
@@ -45,10 +48,10 @@ body {
 	border-radius: 22px;
 	display: flex;
 	justify-content: space-between;
-    align-items: center;
-    padding-right: 17px;
-    max-width: 830px;
-    width: 50%;
+	align-items: center;
+	padding-right: 17px;
+	max-width: 830px;
+	width: 50%;
 }
 
 .input-search {
@@ -58,46 +61,100 @@ body {
 	padding-bottom: 12px;
 	padding-left: 23px;
 	padding-right: 23px;
+	width: 100%;
 }
 
 .button-search {
-    padding: 0;
+	padding: 0;
 	width: 19px;
 	height: 19px;
 	border: none;
 	background-color: transparent;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .icon-search {
-    fill: #000;
+	fill: #000;
 }
 
 .icons {
-    align-items: center;
-    margin-left: auto;
+	align-items: center;
+	margin-left: auto;
 }
 
 .icons-link {
-    text-decoration: none;
-    opacity: 0.24;
+	text-decoration: none;
+	opacity: 0.24;
 }
 
 .icons-link:hover {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
 .icons-link:not(:last-child) {
-    margin-right: 50px;
+	margin-right: 50px;
 }
 
 .user {
-    margin-left: 50px;
+	margin-left: 50px;
 }
 
 .user-avatar {
-    width: 40px;
-    height: 40px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.sidebar {
+	padding-left: 32px;
+}
+
+.nav-menu {
+	margin-top: 0;
+	margin-bottom: 60px;
+	padding-left: 0;
+	list-style: none;
+}
+
+.nav-item {
+	margin-bottom: 28px;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #898989;
+	display: flex;
+	align-items: center;
+}
+
+.nav-link:hover {
+    color: #FF0000;
+}
+
+.nav-link:hover .icon {
+    fill: #FF0000;
+}
+
+.nav-item .icon {
+	fill: #898989;
+}
+
+.nav-text {
+	margin-left: 13px;
+}
+
+.nav-image {
+	width: 26px;
+	height: 26px;
     border-radius: 50%;
     overflow: hidden;
 }
+
+.nav-title {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 23px;
+    margin-bottom: 30px;
+}
+
