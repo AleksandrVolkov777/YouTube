@@ -4,8 +4,8 @@
 
 body {
 	font-family: 'Mulish', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 .header {
@@ -16,6 +16,12 @@ body {
 	padding-left: 32px;
 	padding-right: 70px;
 	margin-bottom: 30px;
+	position: fixed; /* фиксация шапки */
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	z-index: 99;
 }
 
 .menu-button {
@@ -52,6 +58,7 @@ body {
 	padding-right: 17px;
 	max-width: 830px;
 	width: 50%;
+	margin-right: 40px;
 }
 
 .input-search {
@@ -78,6 +85,7 @@ body {
 }
 
 .icons {
+	display: flex;
 	align-items: center;
 	margin-left: auto;
 }
@@ -103,11 +111,27 @@ body {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	overflow: hidden;
+	object-fit: cover;
 }
 
 .sidebar {
+	position: fixed;
+	width: 240px; /* задаем ширину сайдбара чтобы ползунок красиво вмещался */
+	left: 0;
+	top: 114px;
+	height: calc(100% - 114px); /* высчитываем автоматическую высоту */
+	overflow-y: auto; /* делаем сайдбар прокручиваем так как если контент не влезает он врокручивается */
 	padding-left: 32px;
+	background-color: #fff;
+}
+
+.content {
+	width: 100%;
+	height: 400px;
+	margin-top: 85px;
+	padding-left: 250px;
+	padding-top: 30px;
+	padding-right: 70px;
 }
 
 .nav-menu {
@@ -129,11 +153,11 @@ body {
 }
 
 .nav-link:hover {
-    color: #FF0000;
+	color: #ff0000;
 }
 
 .nav-link:hover .icon {
-    fill: #FF0000;
+	fill: #ff0000;
 }
 
 .nav-item .icon {
@@ -147,14 +171,375 @@ body {
 .nav-image {
 	width: 26px;
 	height: 26px;
-    border-radius: 50%;
-    overflow: hidden;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
 .nav-title {
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 23px;
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
+.channel {
+	position: relative;
+	margin-bottom: 49px;
+}
+
+.channel:last-child {
+	padding-bottom: 75px;
+}
+
+.channel-title {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #19202c;
+	font-weight: bold;
+	font-size: 26px;
+	line-height: 33px;
+	margin-bottom: 30px;
+}
+
+.channel-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.channel-text-footer {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color: #c2c2c2;
+	padding-top: 8px;
+}
+
+.channel-text {
+	margin-left: 20px;
+}
+
+.channel-button {
+	cursor: pointer;
+}
+
+.video-thumb {
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 14px;
+	position: relative;
+}
+
+.video-thumb-centr {
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	border-radius: 14px;
+	position: relative;
+}
+
+.thumbnail {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.thumbnail-centr {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.video-duration {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 12px;
+	font-size: 14px;
+	line-height: 18px;
+	color: #fff;
+	padding: 3px 9px;
+}
+
+.video-title {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px;
+	color: #19202c;
+	margin-top: 10px;
+	margin-bottom: 4px;
+}
+
+.video-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 13px;
+	line-height: 16px;
+	color: #c2c2c2;
+}
+
+.video-counter {
+	display: flex;
+}
+
+.video-views {
+	margin-right: 5px;
+}
+
+.video-views::after {
+	/* мы так сделали точку в карточке */
+	content: '';
+	width: 2px;
+	height: 2px;
+	background-color: #c2c2c2;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.channel-button {
+	cursor: pointer;
+}
+
+.slider-buttons {
+	position: absolute;
+	right: 1%;
+	top: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 66px;
+}
+
+.slider-buttons-recommended {
+	position: absolute;
+	right: 1%;
+	top: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 66px;
+}
+
+.button-fotter-text {
+	position: absolute;
+	top: 8px;
+	right: 15%;
+	background: #ff0000;
+	border-radius: 20px;
+	border: none;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
+	padding: 10px 20px;
+}
+
+.mobile-sidebar {
+	display: none;
+}
+
+.mobile-search {
+	display: none;
+}
+
+@media (max-width: 1075px) {
+	.channel-text-footer {
+		width: 114px;
+	}
+}
+
+@media (max-width: 941px) {
+	.button-fotter-text {
+		width: 120px;
+		padding: 10px 7px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 902px) {
+	.channel-text-footer {
+		font-size: 14px;
+		padding-top: 0;
+	}
+
+	.title-footer {
+		width: 67px;
+	}
+
+	.channel-title {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 860px) {
+	.icons {
+		display: none;
+	}
+	.user {
+		margin-left: auto;
+	}
+}
+
+@media (max-width: 830px) {
+	.button-fotter-text {
+		display: none;
+	}
+}
+
+@media (max-width: 640px) {
+	.title-footer {
+		width: 161px;
+	}
+
+	.channel-title {
+		font-size: 26px;
+	}
+
+	.slider-buttons-recommended {
+		display: none;
+	}
+
+	.button-fotter-text {
+		display: block;
+		right: 0%;
+		font-size: 14px;
+		padding: 9px 7px;
+	}
+
+	.channel-text-footer {
+		font-size: 16px;
+		padding-top: 1;
+	}
+
+	.swiper-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.swiper-slide {
+		margin-bottom: 40px;
+	}
+
+	.video-thumb {
+		height: 300px;
+	}
+
+	.slider-buttons {
+		display: none;
+	}
+
+	.mobile-search {
+		display: block;
+		margin-left: auto;
+	}
+
+	.user {
+		margin-left: 24px;
+	}
+
+	.input-group {
+		position: fixed;
+		top: -100px;
+		left: 0;
+		opacity: 0;
+		width: 67%;
+		margin-left: 25px;
+		transition: top 0.3s;
+	}
+
+	.input-group.is-open {
+		opacity: 1;
+		top: 20px;
+	}
+
+	.menu-button {
+		display: none;
+	}
+
+	.sidebar {
+		display: none;
+	}
+	.content {
+		padding-left: 32px;
+	}
+
+	.mobile-sidebar {
+		display: block;
+		position: fixed;
+		z-index: 99;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: #fff;
+	}
+
+	.mobile-sidebar .nav-link {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.mobile-sidebar .nav-menu {
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding-top: 13px;
+		padding-bottom: 11px;
+		border-top: 1px solid #f1f1f1;
+	}
+
+	.nav-text {
+		margin-left: 0;
+		font-size: 10px;
+		line-height: 13px;
+	}
+
+	.nav-item {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 414px) {
+	.slider-buttons-recommended {
+		display: none;
+	}
+
+	.button-fotter-text {
+		display: none;
+	}
+
+	.channel-text-footer {
+		display: none;
+	}
+}
+
+@media (max-width: 375px) {
+	.channel-title {
+		font-size: 26px;
+	}
+
+	.slider-buttons-recommended {
+		display: none;
+	}
+
+	.button-fotter-text {
+		display: none;
+	}
+
+	.channel-text-footer {
+		display: none;
+	}
+}
+
+
+@media (max-width: 320px) {
+	.channel-title {
+		font-size: 24px;
+	}
+}
